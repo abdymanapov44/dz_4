@@ -11,22 +11,42 @@ let celebrities = [
     { name: "Zendaya", age: 27, role: "actor" }
 ];
 
-let names = celebrities.map(c => c.name);
-console.log("Имена:", names);
+let names = people.map(function(p) {
+  return p.name;
+});
+console.log(names);
 
+let text = people.map(function(p) {
+  return p.name + " is a " + p.role;
+});
+console.log(text);
 
-let sentences = celebrities.map(c => `${c.name} is a ${c.role}`);
-console.log("Строки:", sentences);
+let oldest = people.reduce(function(a, b) {
+  if (b.age > a.age) {
+    return b; 
+  } else {
+    return a; 
+  }
+});
+console.log(oldest);
 
-let oldest = celebrities.reduce((max, c) => c.age > max.age ? c : max);
-let youngest = celebrities.reduce((min, c) => c.age < min.age ? c : min);
+let youngest = people.reduce(function(a, b) {
+  if (b.age < a.age) {
+    return b; 
+  } else {
+    return a; 
+  }
+});
+console.log(youngest);
 
-console.log("Самый старший:", oldest);
-console.log("Самый младший:", youngest);
-console.log("Разница в возрасте:", oldest.age - youngest.age);
+console.log(oldest.age - youngest.age);
 
-let hasMinor = celebrities.some(c => c.age < 18);
-console.log("Есть несовершеннолетний:", hasMinor);
+let hasChild = people.some(function(p) {
+  return p.age < 18;
+});
+console.log(hasChild);
 
-let olderThan20 = celebrities.filter(c => c.age > 20);
-console.log("Старше 20:", olderThan20);
+let older = people.filter(function(p) {
+  return p.age > 20;
+});
+console.log(older);

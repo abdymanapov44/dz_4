@@ -1,5 +1,5 @@
 let arr = [3, 8, 15, 22, 7];
-console.log("М~ассив:", arr);
+console.log("Массив:", arr);
 
 arr.push(10);
 console.log("После push:", arr);
