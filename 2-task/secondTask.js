@@ -1,4 +1,4 @@
-let celebrities = [
+let people = [
     { name: "Michael Jackson", age: 50, role: "singer" },
     { name: "Leonardo DiCaprio", age: 49, role: "actor" },
     { name: "Taylor Swift", age: 34, role: "singer" },
